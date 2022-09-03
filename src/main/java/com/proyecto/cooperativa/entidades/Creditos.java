@@ -8,23 +8,21 @@ import java.util.Date;
 public class Creditos {
     @Id
     private int codigo;
-
-    @Column(name = "monto-prestado", nullable = false)
+    @Column(name = "monto_prestado", nullable = false)
     private int montoPrestado;
-
-    @Column(name = "plazo-prestado", nullable = false)
+    @Column(name = "plazo_prestado", nullable = false)
     private int plazoPrestado;
-
-    @Column(name = "fecha-desembolso", nullable = false)
+    @Column(name = "fecha_desembolso", nullable = false)
     private Date fechaDesembolso;
-
     @ManyToOne
-    @JoinColumn(name = "documento-cliente")
+    @JoinColumn(name = "documento_cliente")
     Cliente cli;
-
     @ManyToOne
-    @JoinColumn(name = "codigo-lineas-credito")
+    @JoinColumn(name = "codigo_lineas_credito")
     LineasDeCredito lc;
+
+    public Creditos() {
+    }
 
     public Creditos(int codigo, int montoPrestado, int plazoPrestado, Date fechaDesembolso, Cliente cli, LineasDeCredito lc) {
         this.codigo = codigo;

@@ -6,22 +6,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Clientes")
+@Table(name = "clientes")
 public class Cliente {
     @Id
     private int documento;
-
     @Column(nullable = false, length = 30)
     private String nombre;
-
     @Column(nullable = false, length = 30)
     private String apellido;
-
     @Column(nullable = false, length = 25, unique = true)
     private String correo;
-
     @Column(nullable = false, length = 15)
     private String celular;
+
+    public Cliente() {
+    }
 
     public Cliente(int documento, String nombre, String apellido, String correo, String celular) {
         this.documento = documento;

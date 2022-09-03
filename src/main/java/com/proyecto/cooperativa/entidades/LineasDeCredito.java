@@ -11,15 +11,15 @@ public class LineasDeCredito {
 
     @Id
     private int codigo;
-
     @Column(nullable = false, length = 30, unique = true)
     private String nombre;
-
     @Column(name = "Monto_Maximo")
     private int montoMaximo;
-
     @Column(name = "Plazo_Maximo")
     private int plazoMaximo;
+
+    public LineasDeCredito() {
+    }
 
     public LineasDeCredito(int codigo, String nombre, int montoMaximo, int plazoMinimo) {
         this.codigo = codigo;
